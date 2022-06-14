@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+# React Chat App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+This react app showcases the ability for two users to create a room of the same ID and chat using socket.io functionalities. The socket.io functionalities from server-side are found here "[https://github.com/NLaw5/express_server_React_Chat_App]". This app contains two components: App and Chat. 
 
-In the project directory, you can run:
+### App Component 
+The App component allows users to enter their username and a room id, while also forming our connection to our express server using **const socket = io.connect("http://localhost:8080")**
 
-### `npm start`
+Any connection to the server side will be done through our socket object, where we can use the function **emit** to access any of our server-side socket functions that is declared.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The app also contains a child component called Child, where messagging will take place between two users of the same room id. Props that will be sent to the child are: 
+- **socket**
+- **username**
+- **room id**
+- **showChat** (acts as a toggle to either display the Chat component or the Join Room View
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Chat Component
+This Chat component will receive a list of props. There are two main functions in this component:
+- useEffect (whenever our client receives messages, useEFfect will access the "receve_mesasge" socket function to grab any messages and add them to an array of listOfMessages
+- sendMessage (an async function in which we create an object to hold our mesasgeData and send that messageData to our server via the socket function "send_message")
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Plugins used:
+- socket.io-client
+- react-scroll-to-bottom
