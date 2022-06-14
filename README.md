@@ -2,7 +2,7 @@
 
 ## Description
 
-This react app showcases the ability for two users to create a room of the same ID and chat using socket.io functionalities. The socket.io functionalities from server-side are found here "[https://github.com/NLaw5/express_server_React_Chat_App]". This app contains two components: App and Chat. 
+This react app showcases the ability for two users to create a room of the same ID and chat using socket.io functionalities. The socket.io functionalities from server-side are found [here](https://github.com/NLaw5/express_server_React_Chat_App). This app contains two components: App and Chat. 
 
 ### App Component 
 The App component allows users to enter their username and a room id, while also forming our connection to our express server using **const socket = io.connect("http://localhost:8080")**
