@@ -13,7 +13,7 @@ The app also contains a child component called Child, where messagging will take
 - **socket**
 - **username**
 - **room id**
-- **showChat** (acts as a toggle to either display the Chat component or the Join Room View
+- **showChat** (acts as a toggle to either display the Chat component or the Join Room View)
 
 ### Chat Component
 This Chat component will receive a list of props. There are two main functions in this component:
