@@ -1,4 +1,5 @@
 # React Chat App
+To try this app out, clone the repo and run npm install. Please keep in mind that to run this application you will also need the server-side code, which is found [here](https://github.com/NLaw5/express_server_React_Chat_App). To run the application, run npm start on the **server first**. Once the server is up and running, run the React Chat App, and make two instances of localhost:3000 on your browser. Happy Hacking!
 
 ## Description
 
